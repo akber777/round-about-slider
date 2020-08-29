@@ -14,6 +14,8 @@ class Slider {
 
     } = {}) {
 
+        let that = this;
+
         // addClasslist  and create button box and buttons
 
         sliderButtonBox.classList.add('roundAbout__buttons');
@@ -34,6 +36,8 @@ class Slider {
 
         // ---------
 
+        // setSlider item
+        this.slideCount = slideCount;
         this.sliderSelector = document.querySelector(sliderSelector);
         this.sliderItem = document.querySelectorAll(`${sliderSelector} div`);
         this.startItem = document.querySelector(slideStartItem);
@@ -42,14 +46,40 @@ class Slider {
         this.rightButton = slideRight;
         // slider container
         this.siderContainer = document.querySelector(`${sliderContainer}`);
+
+        // ---------------------------------------
+
+        // clone slider
+
+        // let windoWidthNew = window.innerWidth
+
+        // let empItem = []
+
+        // for (let i = 0; i < this.sliderItem.length; i++) {
+
+        //     let calcSlider = windoWidthNew / this.slideCount;
+
+        //     let itm = this.sliderItem[i];
+
+        //     let cln = itm.cloneNode(true);
+        //     cln.style.width = `${calcSlider + 'px'}`
+
+        //     this.sliderSelector.append(cln);
+
+        //     let newData = document.querySelectorAll(`${'.roundAbout'} div`)
+
+        //     empItem.push(newData)
+
+        // }
+
+        // ---------------------------------------------
+
         // slider button box
-        this.sliderButtonBox = sliderButtonBox
+        this.sliderButtonBox = sliderButtonBox;
         // autoplay tim
         this.time = sliderTime;
         // autoplay
         this.autoPlay = autoPlay;
-        // setSlider item
-        this.slideCount = slideCount;
         // this slider or my bind function (.Akber Akhmedzadeh.)
         this.that = this;
 
@@ -68,7 +98,11 @@ class Slider {
         //  callfunction
 
 
-        let that = this;
+
+
+        // // clone sliderItem
+
+        // that.cloneSlideItem()
 
         this.rightButton.onclick = function () {
 
@@ -91,8 +125,15 @@ class Slider {
 
         that.setItem()
 
-
     }
+
+
+
+
+    // cloned slideItems
+
+
+
 
     // next slider
 
@@ -103,17 +144,20 @@ class Slider {
         let translateElement = this.startItem.clientWidth
 
 
-        if (this.index < this.sliderItem.length - 1) {
+        if (this.index != -1) {
+            if (this.index < this.sliderItem.length - this.slideCount) {
 
-            this.index++
+                this.index++
 
-            this.sliderSelector.style.transform = `translate3d(-${this.index * translateElement}px,0px,0px)`
+                this.sliderSelector.style.transform = `translate3d(-${this.index * translateElement}px,0px,0px)`
 
-            if (this.index >= this.sliderItem.length - 1) {
-                this.index = -1
+                if (this.index >= this.sliderItem.length - this.slideCount) {
+
+                    this.index = -1
+
+                }
 
             }
-
         }
 
 
@@ -133,7 +177,7 @@ class Slider {
         }
 
         if (this.index == -1) {
-            this.index = this.sliderItem.length - 1
+            this.index = this.sliderItem.length - this.slideCount
             this.index--
             this.sliderSelector.style.transform = `translate3d(-${this.index * translateElement}px,0px,0px)`;
         }
@@ -158,6 +202,8 @@ class Slider {
 
     }
 
+
+
     // setSlider item
 
     setItem() {
@@ -170,13 +216,16 @@ class Slider {
 
             for (let i = 0; i < this.sliderItem.length; i++) {
 
-                this.sliderItem[i].style.width = `${calcSlider+'px'}`
+                this.sliderItem[i].style.width = `${calcSlider + 'px'}`
             }
 
         }
 
 
     }
+
+
+
 
 }
 
