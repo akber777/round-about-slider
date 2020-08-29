@@ -1,0 +1,23 @@
+{
+  "name": "round-about",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/akber777/round-about-slider.git"
+  },
+  "author": {
+    "name":"AKBER",
+    "lastname":"AKHMEDZADEH"
+
+  },
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/akber777/round-about-slider/issues"
+  },
+  "homepage": "https://github.com/akber777/round-about-slider#readme"
+}
