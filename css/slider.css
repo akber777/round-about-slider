@@ -1,0 +1,48 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+.sliderContainer {
+    position: relative;
+    overflow: hidden;
+}
+
+.roundAbout {
+    
+    width: 29000px;
+    transition: all 0.5s ease 0s;
+}
+
+.roundAbout__item {
+    float: left;
+}
+
+.roundAbout__item img {
+    display: inline-block;
+    width: 100%;
+}
+
+.roundAbout__buttons {
+    position: absolute;
+    width: 100%;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+    transform: translateY(-50%);
+    display: flex;
+    justify-content: space-between;
+}
+
+.roundAbout__buttons button {
+    width: 50px;
+    height: 50px;
+    background-color:rgb(17, 24, 54);
+    border:none;
+    cursor: pointer;
+    font-size: 20px;
+    color:#fff;
+    outline:0;
+}
